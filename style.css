@@ -7,3 +7,11 @@
     justify-content: center;
     margin-top: 128px;
   }
+
+  h1 {
+    font-size: 64px;
+  }
+
+  p {
+    font-size: 32px;
+  }
