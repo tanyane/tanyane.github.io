@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600&family=Poppins:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 @keyframes loading {
   from {
     opacity: 1;
@@ -15,13 +15,75 @@
     opacity: 0.6;
   }
 }
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes indextext {
+  from {
+    margin: 15%;
+    font-size: 64px;
+  }
+  to {
+    font-size: 32px;
+    margin: 5%;
+  }
+}
+@keyframes text {
+  from {
+    font-size: 32px;
+  }
+  to {
+    font-size: 24px;
+  }
+}
 a {
-  color: #000000;
+  color: #fff;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: 1000ms opac forwards;
+}
+.index-text {
+  color: #fff;
+  font-size: 64px;
+  margin: 15%;
+}
+.index-text-prices {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 200;
+  margin-top: 10%;
+}
+.index-text-down {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 200;
 }
 
 .loader {
-  font-family: "Poppins", sans-serif;
-  z-index: 2;
+  z-index: 999;
   width: 100%;
   height: 100%;
   display: flex;
@@ -29,25 +91,64 @@ a {
   justify-content: center;
   align-items: center;
   gap: 12px;
+  color: #fff;
+}
+.loader-things {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
 }
 .loader-text {
   font-size: 48px;
 }
 .loader-subtext {
   font-size: 24px;
-  animation: 500ms loading infinite alternate;
+}
+.loader-circle {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: 1s spin infinite linear;
 }
 
 body {
-  background-color: #fff;
+  background-color: #000;
 }
 
 .main {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.open-photo {
+  z-index: 2;
+  position: absolute;
+  margin-top: 48px;
+  top: 70%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+.open-photo img:first-child {
+  max-width: 700px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.9);
+}
+.open-photo img:last-child {
+  position: absolute;
+  max-width: 25px;
+  margin-left: 24px;
+  cursor: pointer;
 }
 
 .header {
-  font-family: "Nunito Sans", sans-serif;
+  font-weight: 200;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -55,8 +156,8 @@ body {
   padding-top: 36px;
 }
 .header-logo {
-  font-family: "Poppins", sans-serif;
-  font-size: 64px;
+  font-size: 32px;
+  font-weight: 400;
   cursor: pointer;
 }
 .header-buttons {
@@ -72,4 +173,78 @@ body {
   opacity: 0.7;
   transform: translateY(-2px);
   transition: 250ms;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+}
+.content-header-text {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 200;
+}
+.content-up {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+.content-up-left img {
+  max-width: 600px;
+}
+.content-up-right {
+  display: flex;
+  flex-direction: column;
+}
+.content-up-right img {
+  max-width: 300px;
+}
+.content-text {
+  color: #fff;
+  font-weight: 200;
+  margin-top: 12px;
+  font-size: 18px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+  gap: 32px;
+  font-weight: 200;
+  font-size: 32px;
+}
+
+.contact {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact img {
+  max-width: 36px;
+}
+.contact a {
+  transition: 250ms;
+}
+.contact a:first-child:hover {
+  transform: translateY(-2px);
+  transition: 250ms;
+}
+.contact a:last-child:hover {
+  transition: 250ms;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 901px) {
+  .header-logo {
+    font-size: 36px;
+  }
 }/*# sourceMappingURL=style.css.map */
